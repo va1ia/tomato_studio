@@ -16,7 +16,8 @@
 ## 4. 设计与验证
 
 - 以用户提供的初版设计为准：红 `#A01B0C`、绿 `#AFB127`、Logo 字距 `-.04em`。
-- 已接入用户字体、default_sticker.png 和 tomato2.svg（替换第一个 o），透明叉子朝下并顺时针 10°。tomato1.svg 留待后续变体，触发条件尚未提供；面板文案仍为占位。
+- 已接入用户字体、default_sticker.png 和 tomato2.svg（替换第一个 o），透明叉子朝下并顺时针 10°。tomato1.svg 用作 favicon 及奶油色主题的番茄轮廓；面板文案仍为占位。字标番茄为原生按钮，循环切换红绿 / 奶油红 / 橄榄绿，换色与换形采用 360ms ease-in-out，番茄旋转 1100ms，使用单条 cubic-bezier(.7,0,.3,1) 强 ease-in-out 曲线使中段最快，不要拆成两个各自减速的半圈；移除鼠标悬停 tooltip，保留键盘焦点；绿色主题必须使用 tomato3.svg 原始素材，不要改色 tomato2；主题定义在 base.css，顺序在 siteConfig.js。三版 SVG 原始路径及填色已内嵌 index.html，修改源图时同步内嵌路径。
 - 替换素材先看 `scripts/siteConfig.js` 和 `styles/base.css`。
+- Logo 在所有屏幕尺寸均贴住首屏底部，保留页面内边距；桌面为单行，600px 及以下按参考图改为 Tomato / Studio 两行；手机 Logo 与导航共用左右内边距，贴纸随 Studio 定位；电脑贴纸靠品牌区域右边缘，视觉留白与 T 左侧接近。不要在手机版恢复纵向居中。导航字号上限 18px、描边使用 .1em，保持随字号缩放。
 - 保留按钮悬停反色、键盘焦点、原生 dialog 关闭行为和触屏光标回退。
 - 通过本地静态服务器检查桌面和手机首屏；用户未要求发布时保留在本地。

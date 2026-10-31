@@ -1,5 +1,5 @@
 /* 目录：1. 复用面板与背景遮罩 2. 标题及正文 3. 移动端 */
-.panel { position: fixed; margin: auto; width: min(700px, calc(100% - 40px)); max-height: calc(100svh - 40px); overflow: auto; padding: 30px; color: var(--olive); background: var(--tomato); border: 3px solid var(--olive); }
+.panel { position: fixed; margin: auto; width: min(700px, calc(100% - 40px)); max-height: calc(100svh - 40px); overflow: auto; padding: 30px; color: var(--color-foreground); background: var(--color-background); border: 3px solid var(--color-foreground); }
 .panel::backdrop { background: rgb(35 8 2 / 65%); }
 .panel__top { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .panel__top > span { font-size: 14px; text-transform: uppercase; }

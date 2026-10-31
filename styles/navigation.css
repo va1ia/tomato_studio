@@ -1,4 +1,4 @@
-/* 目录：1. 导航布局 2. 可复用胶囊按钮 3. 悬停与键盘状态 4. 移动端 */
+/* 目录：1. 导航布局 2. 胶囊按钮与字号上限 / 等比描边 3. 悬停与键盘状态 4. 移动端 */
 .navigation { display: flex; flex-direction: column; align-items: flex-start; gap: 19px; position: relative; z-index: 1; }
 .pill {
   display: inline-flex;
@@ -17,13 +17,20 @@
   line-height: 1.12;
   text-transform: uppercase;
   text-align: center;
-  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+  transition: color var(--theme-duration) var(--theme-easing), background-color var(--theme-duration) var(--theme-easing), border-color var(--theme-duration) var(--theme-easing);
 }
-.pill:focus-visible { background: var(--olive); border-color: var(--olive); color: var(--tomato); }
+.navigation .pill {
+  font-size: clamp(12px, 1.15vw, 18px);
+  min-height: 1.85em;
+  padding: .16em 1.05em;
+  border-width: .1em;
+}
+.pill:focus-visible { background: var(--color-foreground); border-color: var(--color-foreground); color: var(--color-background); }
 @media (hover: hover) {
-  .pill:hover { background: var(--olive); border-color: var(--olive); color: var(--tomato); }
+  .pill:hover { background: var(--color-foreground); border-color: var(--color-foreground); color: var(--color-background); }
 }
 @media (max-width: 600px) {
   .navigation { gap: 14px; }
   .pill { min-height: 44px; padding: 6px 17px; font-size: 15px; }
+  .navigation .pill { font-size: clamp(11px, 3.1vw, 13px); min-height: 2.3em; }
 }

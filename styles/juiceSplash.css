@@ -1,0 +1,3 @@
+/* 目录：1. 汁液画布定位与点击穿透 2. 减少动效 */
+.juice-splash { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 2147483646; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .juice-splash { display: none; } }

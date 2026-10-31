@@ -1,7 +1,7 @@
 /* 目录：1. 光标定位层 2. 叉尖热点与向下 10° / 悬停抬起 3. 原生光标隐藏及触屏回退 */
 .fork-cursor { position: fixed; left: 0; top: 0; z-index: 2147483647; pointer-events: none; opacity: 0; }
 .fork-cursor.is-visible { opacity: 1; }
-.fork-cursor img { width: auto; height: 140px; max-width: none; transform-origin: 50% 98%; transform: translate(-50%, -98%) rotate(var(--fork-rest-angle)); transition: transform 200ms cubic-bezier(.2,.8,.2,1); }
+.fork-cursor img { width: auto; height: 180px; max-width: none; transform-origin: 50% 98%; transform: translate(-50%, -98%) rotate(var(--fork-rest-angle)); transition: transform 200ms cubic-bezier(.2,.8,.2,1); }
 .fork-cursor.is-hovering img { transform: translate(-50%, calc(-98% - 10px)) rotate(var(--fork-hover-angle)); }
 @media (hover: hover) and (pointer: fine) {
   html.has-fork-cursor, html.has-fork-cursor * { cursor: none !important; }

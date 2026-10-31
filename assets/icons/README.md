@@ -3,7 +3,7 @@
 
 ## 1. 入口与显示
 
-`fork.png`：116 × 768 RGBA 透明 PNG，柄在上、叉尖在下。网页显示高度 140px，以宽度 50%、高度 98% 附近为热点。普通状态顺时针 10°，悬停转至 -8° 并抬起 10px。角度配置在 `scripts/siteConfig.js`，尺寸与热点在 `styles/customCursor.css`。
+`fork.png`：116 × 768 RGBA 透明 PNG，柄在上、叉尖在下。网页显示高度 180px，以宽度 50%、高度 98% 附近为热点。普通状态顺时针 10°，悬停继续顺时针转至 32° 并抬起 10px。角度配置在 `scripts/siteConfig.js`，尺寸与热点在 `styles/customCursor.css`。
 
 ## 2. 来源与提示
 
@@ -15,4 +15,4 @@
 
 ## 3. 处理记录
 
-生成图为 1024 × 1536 RGBA。用系统图像工具裁切到 x=396、y=0、232 × 1536，再等比缩小至 116 × 768，保留透明通道。`fork-placeholder.svg` 和 `tomato.svg` 为初始化占位，前者不再加载，后者仍作为浏览器 favicon。
+生成图为 1024 × 1536 RGBA。用系统图像工具裁切到 x=396、y=0、232 × 1536，再等比缩小至 116 × 768，保留透明通道。`fork-placeholder.svg` 和 `tomato.svg` 为初始化占位，前者不再加载，后者保留备查；浏览器 favicon 已改用 `assets/images/tomato1.svg`。

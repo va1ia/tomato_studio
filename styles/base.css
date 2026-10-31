@@ -1,4 +1,4 @@
-/* 目录：1. 本地字体接口 2. 品牌与布局变量 3. 基础重置 4. 键盘焦点与减少动效 */
+/* 目录：1. 本地字体接口 2. 三套品牌色与缓动参数（汁液沿用 Logo 文字色） 3. 基础重置及主题过渡 4. 键盘焦点与减少动效 */
 
 /* 1. 已上传：MADE Mountain 字标、42dot Sans Bold 导航。 */
 @font-face {
@@ -20,22 +20,33 @@
   --olive: #AFB127;
   --color-background: var(--tomato);
   --color-foreground: var(--olive);
+  --theme-duration: 360ms;
+  --theme-easing: ease-in-out;
   --font-logo: "Tomato Logo", "Cooper Black", "Georgia", serif;
   --font-body: "Tomato Navigation", "Helvetica Neue", Helvetica, sans-serif;
   --page-padding-x: clamp(20px, 2.1vw, 40px);
   --page-padding-y: clamp(24px, 2.8vh, 40px);
   --outline: 3px;
 }
+:root[data-theme="cream"] {
+  --color-background: #F5E0AE;
+  --color-foreground: #A01B0C;
+}
+:root[data-theme="olive"] {
+  --color-background: #7C7E00;
+  --color-foreground: #F5E0AE;
+}
 
 /* 3. 基础重置 */
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-body); }
+body, .panel { transition: background-color var(--theme-duration) var(--theme-easing), color var(--theme-duration) var(--theme-easing), border-color var(--theme-duration) var(--theme-easing); }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
 button, a { touch-action: manipulation; }
 button { cursor: pointer; }
 img { display: block; max-width: 100%; }
-::selection { color: var(--tomato); background: var(--olive); }
+::selection { color: var(--color-background); background: var(--color-foreground); }
 
 /* 4. 无障碍 */
 :focus-visible { outline: 2px dashed currentColor; outline-offset: 6px; }
