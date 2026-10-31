@@ -1,4 +1,4 @@
-/* 目录：1. 叉子素材与角度 2. 各主题贴纸配色 3. 主题循环顺序 4. 导航面板占位内容 */
+/* 目录：1. 叉子素材与角度 2. 各主题桌面 SVG / 手机高清贴纸 3. 主题循环顺序 4. 导航面板占位内容 */
 export const siteConfig = {
   cursor: {
     image: 'assets/icons/fork.png',
@@ -6,9 +6,9 @@ export const siteConfig = {
     hoverAngle: 32,
   },
   themes: [
-    { id: 'tomato', name: 'Tomato red', background: '#A01B0C', sticker: 'assets/images/print-stickers/Group 632647-print.svg' },
-    { id: 'cream', name: 'Cream', background: '#F5E0AE', sticker: 'assets/images/print-stickers/Group 632646-print.svg' },
-    { id: 'olive', name: 'Olive', background: '#7C7E00', sticker: 'assets/images/print-stickers/Group 632645-print.svg' },
+    { id: 'tomato', name: 'Tomato red', background: '#A01B0C', sticker: 'assets/images/print-stickers/Group 632647-print.svg', stickerMobile: 'assets/images/print-stickers/mobile/sticker-632647@4x.png' },
+    { id: 'cream', name: 'Cream', background: '#F5E0AE', sticker: 'assets/images/print-stickers/Group 632646-print.svg', stickerMobile: 'assets/images/print-stickers/mobile/sticker-632646@4x.png' },
+    { id: 'olive', name: 'Olive', background: '#7C7E00', sticker: 'assets/images/print-stickers/Group 632645-print.svg', stickerMobile: 'assets/images/print-stickers/mobile/sticker-632645@4x.png' },
   ],
   panels: {
     tomato: { label: 'Which kind of tomato are you?', title: 'Still ripening.', body: 'A little tomato discovery is coming soon.' },

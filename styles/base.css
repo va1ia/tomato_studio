@@ -1,4 +1,4 @@
-/* 目录：1. 本地字体接口 2. 品牌色与缓动参数 3. 重置、Safari 文字缩放与主题过渡 4. 键盘焦点与减少动效 */
+/* 目录：1. 本地字体接口 2. 品牌色与缓动参数 3. 重置、Safari 文字缩放、根背景与主题过渡 4. 键盘焦点与减少动效 */
 
 /* 1. 已上传：MADE Mountain 字标、42dot Sans Bold 导航。 */
 @font-face {
@@ -40,9 +40,9 @@
 /* 3. 基础重置 */
 * { box-sizing: border-box; }
 /* 保持 CSS 字号一致，避免 iOS 自动放大文字却不同比例放大 SVG；允许手动缩放。 */
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background-color: var(--color-background); }
 body { margin: 0; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-body); }
-body, .panel { transition: background-color var(--theme-duration) var(--theme-easing), color var(--theme-duration) var(--theme-easing), border-color var(--theme-duration) var(--theme-easing); }
+html, body, .panel { transition: background-color var(--theme-duration) var(--theme-easing), color var(--theme-duration) var(--theme-easing), border-color var(--theme-duration) var(--theme-easing); }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
 button, a { touch-action: manipulation; }

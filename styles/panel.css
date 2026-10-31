@@ -1,6 +1,9 @@
-/* 目录：1. 复用面板与背景遮罩 2. 标题及正文 3. 移动端 */
+/* 目录：1. 复用面板与不污染 Safari 栏位的内容遮罩 2. 标题及正文 3. 移动端 */
 .panel { position: fixed; margin: auto; width: min(700px, calc(100% - 40px)); max-height: calc(100svh - 40px); overflow: auto; padding: 30px; color: var(--color-foreground); background: var(--color-background); border: 3px solid var(--color-foreground); }
-.panel::backdrop { background: rgb(35 8 2 / 65%); }
+.panel::backdrop { background: transparent; }
+/* 暗色只绘制在页面内容中，避免原生顶层 backdrop 被 Safari 当成浏览器栏颜色。 */
+.home { position: relative; }
+body.panel-open .home::after { content: ""; position: absolute; inset: 0; z-index: 3; background: rgb(35 8 2 / 65%); pointer-events: none; }
 .panel__top { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .panel__top > span { font-size: 14px; text-transform: uppercase; }
 .panel__top .pill { font-size: 14px; }

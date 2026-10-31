@@ -18,7 +18,8 @@ styles/
 scripts/
   main.js                   初始化入口
   siteConfig.js             素材路径、光标角度、主题顺序、面板占位文案
-  colorTheme.js             点击番茄循环换色、无障碍标签与浏览器主题色
+  colorTheme.js             点击番茄循环换色、无障碍标签
+  browserChrome.js          Safari 栏位主题色、弹窗关闭与页面恢复同步
   navigation.js             导航交互
   fitWordmark.js            字标自适应，字体上传后重新测量
   customCursor.js           光标跟随、悬停、触屏回退
@@ -65,7 +66,7 @@ python3 -m http.server 5173 --bind 127.0.0.1
 | 奶油红 | `#F5E0AE` | `#A01B0C` | `#A01B0C` / `#AFB127`，tomato1 轮廓 |
 | 橄榄绿 | `#7C7E00` | `#F5E0AE` | `#F5E0AE` / `#C1DEF7`，tomato3 原始素材 |
 
-主题 CSS 在 `styles/base.css`，切换顺序在 `scripts/siteConfig.js`，交互在 `scripts/colorTheme.js`。颜色与番茄轮廓透明度采用 `360ms ease-in-out`。点击时番茄顺时针旋转一圈（1100ms），使用一条完整的 `cubic-bezier(.7,0,.3,1)` 曲线，起步加速、中间最快、末尾减速，不在半圈处停顿；换色与换形在半圈前完成。番茄无鼠标悬停 tooltip 或焦点框，保留键盘焦点提示。连续点击从当前角度衔接，减少动效设置下关闭旋转与过渡。导航填色、面板、选中文字和浏览器主题色也随之更新。每次载入从初始红绿开始。
+主题 CSS 在 `styles/base.css`，切换顺序在 `scripts/siteConfig.js`，交互在 `scripts/colorTheme.js`。颜色与番茄轮廓透明度采用 `360ms ease-in-out`。点击时番茄顺时针旋转一圈（1100ms），使用一条完整的 `cubic-bezier(.7,0,.3,1)` 曲线，起步加速、中间最快、末尾减速，不在半圈处停顿；换色与换形在半圈前完成。番茄无鼠标悬停 tooltip 或焦点框，保留键盘焦点提示。连续点击从当前角度衔接，减少动效设置下关闭旋转与过渡。导航填色、面板、选中文字和浏览器主题色也随之更新。每次载入从初始红绿开始。Safari 浏览器栏同时使用根背景与单一 theme-color；弹窗关闭、pageshow、返回前台时下一帧同步主题色并重建 meta 节点。主题切换不保留旧 meta 引用。原生 dialog backdrop 透明，暗幕只绘制于 home::after，关闭后移除。
 
 ## 4. 当前素材
 
@@ -74,7 +75,7 @@ python3 -m http.server 5173 --bind 127.0.0.1
 | Logo 字体 | `assets/fonts/mademountain-regular.otf` | `styles/base.css`，真实字重 400 |
 | 左上角字体 | `assets/fonts/42dotSans/42dotSans-Bold.ttf` | `styles/base.css`，字重 700 |
 | 透明叉子 | `assets/icons/fork.png` | `scripts/siteConfig.js`，角度和悬停参数；`styles/customCursor.css` 控制尺寸与热点 |
-| 正式贴纸 | `assets/images/print-stickers/Group 632645-print.svg`、`Group 632646-print.svg`、`Group 632647-print.svg` | `scripts/siteConfig.js` 各主题配置；红页配奶油、奶油页配绿、绿页配红。原生 SVG 印刷颗粒、独立折痕与套色偏移；CSS 顺时针倾斜 10°，随主题 360ms 交叉渐变 |
+| 正式贴纸 | `assets/images/print-stickers/Group 632645-print.svg`、`Group 632646-print.svg`、`Group 632647-print.svg` | `scripts/siteConfig.js` 各主题配置；红页配奶油、奶油页配绿、绿页配红。桌面使用带滤镜的原生 SVG；手机自动选择 `print-stickers/mobile/sticker-编号@4x.png`（848×412），保留颗粒和折痕，避免小尺寸 SVG 滤镜在 Safari 上栅格化发糊；CSS 顺时针倾斜 10°，随主题 360ms 交叉渐变 |
 | 第一个 o / 主题按钮 | `assets/images/tomato2.svg`、`tomato1.svg`、`tomato3.svg` | 三版原始路径及填色内嵌在 `index.html` 的 `.wordmark__tomato` 按钮中，用 CSS 交叉淡化、旋转换形；修改源 SVG 后需同步内嵌路径 |
 | 另一版番茄 / favicon | `assets/images/tomato1.svg` | `index.html` 的浏览器图标；奶油主题使用其轮廓 |
 
