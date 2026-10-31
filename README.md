@@ -78,7 +78,7 @@ python3 -m http.server 5173 --bind 127.0.0.1
 | 第一个 o / 主题按钮 | `assets/images/tomato2.svg`、`tomato1.svg`、`tomato3.svg` | 三版原始路径及填色内嵌在 `index.html` 的 `.wordmark__tomato` 按钮中，用 CSS 交叉淡化、旋转换形；修改源 SVG 后需同步内嵌路径 |
 | 另一版番茄 / favicon | `assets/images/tomato1.svg` | `index.html` 的浏览器图标；奶油主题使用其轮廓 |
 
-字标使用品牌区域宽度的 94.5%，为右侧贴纸留白（`styles/home.css` 的 `--wordmark-width`）。绿番茄额外左移 `.025em`，导航按钮单独缩小。桌面字标在底部保持整行，手机两行的组合宽度为品牌区域的 100%，左边缘与导航对齐，左右共享页面内边距，视觉上为 T + 番茄 + mato / Studio，辅助技术仍读作 Tomato Studio。字体、图片加载后会重新测量适配宽度。
+字标使用品牌区域宽度的 94.5%，为右侧贴纸留白（`styles/home.css` 的 `--wordmark-width`）。绿番茄额外左移 `.025em`，导航按钮单独缩小。桌面字标在底部保持整行，手机两行的组合宽度为品牌区域的 100%，左边缘与导航对齐，左右共享页面内边距，视觉上为 T + 番茄 + mato / Studio，辅助技术仍读作 Tomato Studio。字体、图片加载后会重新测量适配宽度。Safari 对齐：普通 `.wordmark__tomato-slot` 负责行内基线与 em 尺寸，内部按钮绝对定位并清除原生 appearance；SVG 不单独添加底部补偿。根元素 `text-size-adjust: 100%` 避免 iOS 自动字号调整导致文字和图形比例不同，保留手动缩放。`100dvh` 变化时整组字标一起贴底。
 
 叉子使用内置 imagegen 从用户照片提取透明素材并转为朝下，保留生成透明通道，经裁切和缩小后用于网页。素材生成提示与处理记录见 `assets/icons/README.md`。占位 SVG 保留备查，不参与当前首屏。
 
