@@ -1,0 +1,6 @@
+<!-- 目录：1. 临时叉子轮廓（竖直向上为 0°）；正式素材入口见 scripts/siteConfig.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76">
+  <g fill="none" stroke="#AFB127" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3v17q0 10 9 10t9-10V3M12 3v17M18 3v17M15 31v39"/>
+  </g>
+</svg>

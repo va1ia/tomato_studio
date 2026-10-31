@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- 目录：1. 页面信息与样式 2. 首屏导航 3. 品牌字标与贴纸 4. 复用内容面板 5. 页面入口 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#A01B0C">
+  <meta name="description" content="Tomato Studio — an independent design agency.">
+  <title>Tomato Studio</title>
+  <link rel="icon" href="assets/icons/tomato.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/navigation.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/panel.css">
+  <link rel="stylesheet" href="styles/customCursor.css">
+</head>
+<body>
+  <main class="home" id="home" aria-label="Tomato Studio home">
+    <nav class="navigation" aria-label="Main navigation">
+      <button class="pill" type="button" data-panel="tomato" aria-haspopup="dialog">Which kind of tomato are you?</button>
+      <button class="pill" type="button" data-panel="about" aria-haspopup="dialog">About</button>
+      <button class="pill" type="button" data-panel="projects" aria-haspopup="dialog">Projects</button>
+      <button class="pill" type="button" data-panel="contact" aria-haspopup="dialog">Contact</button>
+    </nav>
+    <div class="brand">
+      <h1 class="wordmark" aria-label="Tomato Studio"><span aria-hidden="true">T<img class="wordmark__tomato" src="assets/images/tomato2.svg" alt="" width="195" height="175">mato Studio</span></h1>
+      <img class="brand-sticker" src="assets/images/default_sticker.png" alt="" width="620" height="380" data-sticker>
+    </div>
+    <noscript><p class="no-script">Please enable JavaScript to explore Tomato Studio.</p></noscript>
+  </main>
+  <dialog class="panel" id="info-panel" aria-labelledby="panel-title">
+    <div class="panel__top"><span>Tomato Studio</span><button class="pill" type="button" data-close-panel aria-label="Close panel">Close ×</button></div>
+    <p class="panel__eyebrow" data-panel-label></p>
+    <h2 id="panel-title"></h2>
+    <p class="panel__body" data-panel-body></p>
+  </dialog>
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

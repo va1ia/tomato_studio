@@ -1,0 +1,43 @@
+/* 目录：1. 满屏构图 2. 单行字标与番茄 o（字距 -4%） 3. 正式贴纸 4. 手机及低高度横屏布局 */
+.home {
+  min-height: 100svh;
+  padding: var(--page-padding-y) var(--page-padding-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 100px;
+  overflow: clip;
+}
+.brand { position: relative; margin-top: auto; padding-bottom: 9px; }
+.wordmark {
+  margin: 0;
+  font-family: var(--font-logo);
+  font-weight: 400;
+  font-size: 16.9vw;
+  line-height: .9;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  /* scripts/fitWordmark.js 根据真实字体贴合可用宽度，避免换字后溢出。 */
+  width: max-content;
+}
+.wordmark__tomato {
+  display: inline-block;
+  width: .64em;
+  height: .58em;
+  margin-left: -.025em;
+  margin-right: -.02em;
+  vertical-align: -.035em;
+  object-fit: contain;
+}
+.brand-sticker { position: absolute; width: clamp(90px, 10vw, 180px); height: auto; right: 1%; top: -3%; pointer-events: none; }
+.no-script { font-size: 14px; }
+@media (max-width: 600px) {
+  .home { gap: 160px; }
+  .brand { padding-bottom: 10px; }
+  .brand-sticker { top: -70px; right: 0; width: 100px; }
+}
+@media (max-height: 500px) and (min-width: 601px) {
+  .home { gap: 28px; }
+  .navigation { gap: 10px; }
+  .navigation .pill { min-height: 32px; }
+}

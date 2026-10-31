@@ -1,0 +1,8 @@
+<!-- 目录：1. 临时椭圆贴纸 2. 番茄图形 3. 品牌文字；后续用正式设计替换 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="110" viewBox="0 0 180 110">
+  <ellipse cx="90" cy="55" rx="86" ry="49" fill="#d5dfdc" stroke="#A01B0C" stroke-width="2"/>
+  <ellipse cx="90" cy="55" rx="80" ry="43" fill="none" stroke="#A01B0C" stroke-width="1.5"/>
+  <path d="M92 23C72 14 58 29 63 47s40 21 48 2-3-31-19-26Z" fill="#A01B0C"/>
+  <path d="m87 20 4 9 11-2-7 7 5 8-12-5-10 5 4-9-8-6 11 1Z" fill="#AFB127"/>
+  <text x="90" y="83" text-anchor="middle" fill="#A01B0C" font-family="Georgia,serif" font-weight="bold" font-size="20">Tomato Studio</text>
+</svg>

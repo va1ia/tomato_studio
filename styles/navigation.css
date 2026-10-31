@@ -1,0 +1,29 @@
+/* 目录：1. 导航布局 2. 可复用胶囊按钮 3. 悬停与键盘状态 4. 移动端 */
+.navigation { display: flex; flex-direction: column; align-items: flex-start; gap: 19px; position: relative; z-index: 1; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 38px;
+  max-width: 100%;
+  border: var(--outline) solid currentColor;
+  border-radius: 999px;
+  padding: 3px 24px;
+  background: transparent;
+  color: var(--color-foreground);
+  font-size: clamp(16px, 1.45vw, 24px);
+  font-weight: 700;
+  line-height: 1.12;
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+.pill:focus-visible { background: var(--olive); border-color: var(--olive); color: var(--tomato); }
+@media (hover: hover) {
+  .pill:hover { background: var(--olive); border-color: var(--olive); color: var(--tomato); }
+}
+@media (max-width: 600px) {
+  .navigation { gap: 14px; }
+  .pill { min-height: 44px; padding: 6px 17px; font-size: 15px; }
+}

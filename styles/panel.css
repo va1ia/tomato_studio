@@ -1,0 +1,11 @@
+/* 目录：1. 复用面板与背景遮罩 2. 标题及正文 3. 移动端 */
+.panel { position: fixed; margin: auto; width: min(700px, calc(100% - 40px)); max-height: calc(100svh - 40px); overflow: auto; padding: 30px; color: var(--olive); background: var(--tomato); border: 3px solid var(--olive); }
+.panel::backdrop { background: rgb(35 8 2 / 65%); }
+.panel__top { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.panel__top > span { font-size: 14px; text-transform: uppercase; }
+.panel__top .pill { font-size: 14px; }
+.panel__eyebrow { margin: 64px 0 16px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+.panel h2 { margin: 0; font-family: var(--font-logo); font-size: clamp(40px, 7vw, 72px); line-height: 1; letter-spacing: -.04em; }
+.panel__body { max-width: 42ch; margin: 24px 0 12px; font-size: 18px; line-height: 1.5; }
+body.panel-open { overflow: hidden; }
+@media (max-width: 600px) { .panel { padding: 22px; } }
