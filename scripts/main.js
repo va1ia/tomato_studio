@@ -1,4 +1,4 @@
-/* 目录：1. 配置与组件入口 2. 导航面板初始化 3. 字标自适应 4. 光标和贴纸素材 5. 点击番茄换色、汁液飞溅与随机音效 */
+/* 目录：1. 配置与组件入口 2. 导航面板初始化 3. 字标自适应 4. 光标与三主题贴纸素材 5. 点击番茄换色、汁液飞溅与随机音效 */
 import { siteConfig } from './siteConfig.js';
 import { createPanel } from '../components/panel.js';
 import { initNavigation } from './navigation.js';
@@ -12,7 +12,9 @@ const panel = createPanel(document.querySelector('#info-panel'));
 initNavigation(panel, siteConfig.panels);
 fitWordmark(document.querySelector('.wordmark'));
 initCustomCursor(siteConfig.cursor);
-document.querySelector('[data-sticker]').src = siteConfig.sticker;
+for (const theme of siteConfig.themes) {
+  document.querySelector(`[data-sticker-theme="${theme.id}"]`).src = theme.sticker;
+}
 initColorTheme(siteConfig.themes);
 initJuiceSplash();
 initClickSounds();

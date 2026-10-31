@@ -74,7 +74,7 @@ python3 -m http.server 5173 --bind 127.0.0.1
 | Logo 字体 | `assets/fonts/mademountain-regular.otf` | `styles/base.css`，真实字重 400 |
 | 左上角字体 | `assets/fonts/42dotSans/42dotSans-Bold.ttf` | `styles/base.css`，字重 700 |
 | 透明叉子 | `assets/icons/fork.png` | `scripts/siteConfig.js`，角度和悬停参数；`styles/customCursor.css` 控制尺寸与热点 |
-| 正式贴纸 | `assets/images/default_sticker.png` | `scripts/siteConfig.js`；图片自带倾斜，无额外旋转 |
+| 正式贴纸 | `assets/images/print-stickers/Group 632645-print.svg`、`Group 632646-print.svg`、`Group 632647-print.svg` | `scripts/siteConfig.js` 各主题配置；红页配奶油、奶油页配绿、绿页配红。原生 SVG 印刷颗粒、独立折痕与套色偏移；CSS 顺时针倾斜 10°，随主题 360ms 交叉渐变 |
 | 第一个 o / 主题按钮 | `assets/images/tomato2.svg`、`tomato1.svg`、`tomato3.svg` | 三版原始路径及填色内嵌在 `index.html` 的 `.wordmark__tomato` 按钮中，用 CSS 交叉淡化、旋转换形；修改源 SVG 后需同步内嵌路径 |
 | 另一版番茄 / favicon | `assets/images/tomato1.svg` | `index.html` 的浏览器图标；奶油主题使用其轮廓 |
 
