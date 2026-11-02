@@ -1,5 +1,5 @@
-/* 目录：1. 面板内容渲染 2. 关闭按钮与背景点击 3. 原生 Escape / 焦点恢复 */
-export function createPanel(dialog) {
+/* 目录：1. 面板打开前回调与内容渲染 2. 关闭按钮与背景点击 3. 原生 Escape / 焦点恢复 */
+export function createPanel(dialog, { beforeOpen = () => {} } = {}) {
   let trigger;
   const close = () => dialog.close();
   dialog.querySelector('[data-close-panel]').addEventListener('click', close);
@@ -13,6 +13,7 @@ export function createPanel(dialog) {
   });
   return {
     open(content, source) {
+      beforeOpen();
       trigger = source;
       dialog.querySelector('[data-panel-label]').textContent = content.label;
       dialog.querySelector('h2').textContent = content.title;
